@@ -1,4 +1,4 @@
-import { TextChannel, Client, Message, User, GuildChannel, MessageEmbed, Permissions, Guild, DMChannel, NewsChannel } from "discord.js";
+import { TextChannel, Client, Message, User, GuildChannel, MessageEmbed, Permissions, Guild, DMChannel, NewsChannel , Intents} from "discord.js";
 import { DeleteWriteOpResultObject, FilterQuery, ObjectId, UpdateWriteOpResult } from "mongodb";
 
 import { GuildConfig, GuildConfigModel, ConfigRole } from "../models/guild-config";
@@ -47,7 +47,7 @@ client.on("ready", async () => {
   if (!isReady) {
     isReady = true;
 
-    if (process.env.DISCORD_API_LOGIC.toLowerCase() === "true") {
+    if (process.env.DISCORD_API_LOGIC === "true") {
       // Send updated server information to the API
       sendGuildsToAPI(true);
       let i = 0;
@@ -58,7 +58,7 @@ client.on("ready", async () => {
       }, 20 * 60 * 1000);
     }
 
-    if (process.env.DISCORD_LOGIC.toLowerCase() === "true") {
+    if (process.env.DISCORD_LOGIC === "true") {
       refreshMessages();
 
       // Once per hour, prune games from the database that are more than 48 hours old
@@ -82,7 +82,7 @@ client.on("ready", async () => {
   }
 });
 
-if (process.env.DISCORD_API_LOGIC.toLowerCase() === "true") {
+if (process.env.DISCORD_API_LOGIC === "true") {
   client.on("channelCreate", async (channel: GuildChannel) => {
     if (!channel.guild) return;
     client.shard.send({
