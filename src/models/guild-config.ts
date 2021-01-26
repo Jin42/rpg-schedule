@@ -69,6 +69,7 @@ export interface GuildConfigModel {
   managerRole?: string | ConfigRole;
   escape?: string;
   gameTemplates?: GameTemplate[];
+  publicTimeTable?: boolean;
 }
 
 interface GuildConfigDataModel extends GuildConfigModel {
@@ -99,6 +100,7 @@ export class GuildConfig implements GuildConfigDataModel {
   managerRole: string | ConfigRole = null;
   escape?: "!";
   gameTemplates?: GameTemplate[] = [];
+  publicTimeTable: boolean = false;
   saveDefaultTemplate = false;
 
   constructor(guildConfig: GuildConfigDataModel = {}) {
@@ -235,6 +237,7 @@ export class GuildConfig implements GuildConfigDataModel {
       managerRole: this.managerRole,
       escape: this.escape,
       gameTemplates: this.gameTemplates,
+      publicTimeTable: this.publicTimeTable,
     };
   }
 
