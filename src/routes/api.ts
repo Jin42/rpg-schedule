@@ -58,6 +58,40 @@ export default (options: APIRouteOptions) => {
     }
   });
 
+  router.get("/api/publictt", async (req, res, next) => {
+	fetchGuildGames(req.query.guild)
+	.then(async (result: any) => {
+          if (result.guildConfig.publicTimeTable)
+	  {
+             var cleanGames = [];
+	     result.games.forEach( (game) => {
+                var timezone = game.timezone < 0 ?
+	          new Date(game.date + " " + game.time + " GMT" + game.timezone).getTime():
+                  new Date(game.date + " " + game.time + " GMT+" + game.timezone).getTime();
+                const newGame = {
+		  name: game.adventure,
+		  starttime: timezone,
+                  maxPlayers: game.players,
+		  players: game.hasOwnProperty("reserved") ? game.reserved.length : 0,
+                  runtime: game.duration
+		};
+                cleanGames.push(newGame);
+	      });
+            res.json({
+	      status: "success",
+	      guildName: result.guild.name,
+              games: cleanGames,
+            });
+          }
+          else
+	  {
+            res.json({
+              status: "error"
+            });
+          }
+	});
+  });
+
   router.get("/api/login", async (req, res, next) => {
     if (req.query.code) {
       const headers = {
@@ -1754,6 +1788,33 @@ interface AccountGuild {
   config: GuildConfig;
   games: Game[];
 }
+
+const fetchGuildGames = (guildId) => {
+  return new Promise(async (resolve) => 
+  {
+    const gameOptions: any = {
+      s: {
+        $in: [guildId],
+      },
+      timestamp:  {$gt: new Date().getTime()-900000,},
+    };
+	
+    let sGuilds: ShardGuild[] = [];
+    sGuilds = await ShardManager.shardGuilds({
+      guildIds: [guildId],
+    });
+				  
+    const fGames: Game[] = await Game.fetchAllBy(gameOptions, null, sGuilds, true);
+
+    const guildConfig = await GuildConfig.fetch(guildId); 
+
+    return resolve({
+      guild: sGuilds[0],
+      guildConfig: guildConfig,
+      games: fGames
+    });
+  });
+};
 
 const fetchAccount = (token: any, options: AccountOptions) => {
   const client = options.client;
