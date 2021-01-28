@@ -41,7 +41,6 @@ export default (options: APIRouteOptions) => {
       req.app.locals.lang = merge(cloneDeep(langs.find((lang: any) => lang && lang.code === "en")), cloneDeep(langs.find((lang: any) => lang && lang.code === selectedLang)));
 
       res.locals.lang = req.session.lang;
-      // res.locals.urlPath = req._parsedOriginalUrl.pathname;
       res.locals.url = req.originalUrl;
       res.locals.env = process.env;
 
@@ -64,7 +63,12 @@ export default (options: APIRouteOptions) => {
           if (result.guildConfig.publicTimeTable)
 	  {
              var cleanGames = [];
-	     result.games.forEach( (game) => {
+             result.games.filter(
+               (game) => 
+               {
+                 return !game.deleted;
+               }
+             ).forEach( (game) => {
                 var timezone = game.timezone < 0 ?
 	          new Date(game.date + " " + game.time + " GMT" + game.timezone).getTime():
                   new Date(game.date + " " + game.time + " GMT+" + game.timezone).getTime();
