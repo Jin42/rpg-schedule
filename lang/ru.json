@@ -181,6 +181,7 @@
     "EVENTS_TITLE": "Предстоящие игры на :SERVER в следующем :TIMEFRAME",
     "EVENTS_NONE": "Нет игр в течение указанного периода времени.",
     "desc": {
+      "PUBLICTT": "The link to the public timetable",
       "SERVER_COMMAND": "Эта комнада работает только на сервере",
       "HELP": "Отобразить это окно помощи",
       "LINK": "Запросить ссылку для публикации игр",

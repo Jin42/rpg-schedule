@@ -407,7 +407,8 @@ if (process.env.DISCORD_LOGIC.toLowerCase() === "true") {
                       : ``) +
                     `\n__**${lang.config.USAGE}**__\n` +
                     `\`${botcmd} events timeframe\` - ${lang.config.desc.EVENTS}\n` +
-                    (permission ? `\`${botcmd} link\` - ${lang.config.desc.LINK}` : ``)
+                    (permission ? `\`${botcmd} link\` - ${lang.config.desc.LINK}\n` : ``) +
+                    `\`${botcmd} publictimetable\` - ${lang.config.desc.PUBLICTT}`  
                 );
               if (embed.description.length > 0) message.author.send(embed);
               let embed2 = new MessageEmbed()
@@ -448,6 +449,8 @@ if (process.env.DISCORD_LOGIC.toLowerCase() === "true") {
               message.delete();
             } else if (cmd === "link" && permission) {
               message.channel.send(responseEmbed(process.env.HOST + config.urls.game.create.path + "?s=" + guildId));
+            } else if (cmd === "publictimetable") {
+              message.channel.send(responseEmbed(process.env.HOST + config.urls.publicTT.path + "?guild=" + guildId));
             } else if (cmd === "configuration" && isAdmin) {
               const channel =
                 guildConfig.channels.length > 0

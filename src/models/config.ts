@@ -19,6 +19,7 @@ export default {
       auth: { path: "/games/authenticate", session: true },
       rsvp: { path: "/games/rsvp", session: true }
     },
+    publicTT: { path: "/public" },
     about: { path: "/info/about", session: true },
     changeLang: { path: "/lang/:newLang" },
     invite: { path: "/invite" },

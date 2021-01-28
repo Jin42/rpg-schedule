@@ -181,6 +181,7 @@
     "EVENTS_TITLE": "Die nächsten Spiele :SERVER innerhalb der nächsten :TIMEFRAME",
     "EVENTS_NONE": "Keine Spiele innerhalb der vorgegebenen Zeit.",
     "desc": {
+      "PUBLICTT": "The link to the public timetable",
       "SERVER_COMMAND": "Dieser Befehl wird nur auf dem Server funktionieren.",
       "HELP": "Zeige dieses Hilfefenster an.",
       "LINK": "Erhalte den Link für das veröffentliche Spiel.",

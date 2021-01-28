@@ -181,6 +181,7 @@
     "EVENTS_TITLE": "Jeux à venir sur :SERVER dans le prochain :TIMEFRAME",
     "EVENTS_NONE": "Pas de jeux dans le laps de temps spécifié.",
     "desc": {
+      "PUBLICTT": "The link to the public timetable",
       "SERVER_COMMAND": "Cette commande ne fonctionnera que sur un serveur",
       "HELP": "Afficher cette fenêtre d'aide",
       "LINK": "Récupérer le lien pour poster des parties",

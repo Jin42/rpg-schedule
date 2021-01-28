@@ -179,6 +179,7 @@
     "EVENTS_TITLE": "Giochi Prossimi su :SERVER entro il prossimo :TIMEFRAME",
     "EVENTS_NONE": "Non ci sono giochi all'interno della cornice di tempo specificato.",
     "desc": {
+      "PUBLICTT": "The link to the public timetable",
       "SERVER_COMMAND": "Questo comando funzionerà solo in un server",
       "HELP": "Mostra questa finestra di aiuto",
       "LINK": "Ottieni link per postare giochi",

@@ -181,6 +181,7 @@
     "EVENTS_TITLE": "Upcoming games on :SERVER within the next :TIMEFRAME",
     "EVENTS_NONE": "No games within the specified time frame.",
     "desc": {
+      "PUBLICTT": "The link to the public timetable",
       "SERVER_COMMAND": "This command will only work in a server",
       "HELP": "Display this help window",
       "LINK": "Retrieve link for posting games",
