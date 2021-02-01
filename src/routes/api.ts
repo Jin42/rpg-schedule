@@ -77,7 +77,9 @@ export default (options: APIRouteOptions) => {
 		  starttime: timezone,
                   maxPlayers: game.players,
 		  players: game.hasOwnProperty("reserved") ? game.reserved.length : 0,
-                  runtime: game.duration
+                  runtime: game.duration,
+                  gameImage: game.gameImage,
+                  thumbnail: game.thumbnail,
 		};
                 cleanGames.push(newGame);
 	      });
