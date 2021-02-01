@@ -12,17 +12,17 @@ A discord bot for posting game announcements for RPGs. Features include:
 
 <details>
   <summary>Screenshots</summary>
-  <a href="https://www.rpg-schedule.com/images/screenshot3.png" target="_blank" style="display: inline-flex; height: 200px;"><img src="https://www.rpg-schedule.com/images/screenshot3.png" style="max-width: 100%; max-height: 100%;"></a>
-  <a href="https://www.rpg-schedule.com/images/screenshot4.png" target="_blank" style="display: inline-flex; height: 200px;"><img src="https://www.rpg-schedule.com/images/screenshot4.png" style="max-width: 100%; max-height: 100%;"></a>
-  <a href="https://www.rpg-schedule.com/images/screenshot.png" target="_blank" style="display: inline-flex; height: 200px;"><img src="https://www.rpg-schedule.com/images/screenshot.png" style="max-width: 100%; max-height: 100%;"></a>
-  <a href="https://www.rpg-schedule.com/images/screenshot2.png" target="_blank" style="display: inline-flex; height: 200px;"><img src="https://www.rpg-schedule.com/images/screenshot2.png" style="max-width: 100%; max-height: 100%;"></a>
+  <a href="https://schedule.chaos-cloud.de/images/screenshot3.png" target="_blank" style="display: inline-flex; height: 200px;"><img src="https://schedule.chaos-cloud.de/images/screenshot3.png" style="max-width: 100%; max-height: 100%;"></a>
+  <a href="https://schedule.chaos-cloud.de/images/screenshot4.png" target="_blank" style="display: inline-flex; height: 200px;"><img src="https://schedule.chaos-cloud.de/images/screenshot4.png" style="max-width: 100%; max-height: 100%;"></a>
+  <a href="https://schedule.chaos-cloud.de/images/screenshot.png" target="_blank" style="display: inline-flex; height: 200px;"><img src="https://schedule.chaos-cloud.de/images/screenshot.png" style="max-width: 100%; max-height: 100%;"></a>
+  <a href="https://schedule.chaos-cloud.de/images/screenshot2.png" target="_blank" style="display: inline-flex; height: 200px;"><img src="https://schedule.chaos-cloud.de/images/screenshot2.png" style="max-width: 100%; max-height: 100%;"></a>
 </details>
 
 ## Inviting the discord bot
 
 You can invite the discord bot to your server with the following link:
 
-https://www.rpg-schedule.com/
+https://schedule.chaos-cloud.de/
 
 ## Command List
 
@@ -222,7 +222,7 @@ Each next announcement will be posted X hours after the date/time of the current
 
 ## How to Develop the UI Layer
 
-Visit the [UI Repository](https://github.com/sillvva/rpg-schedule-nuxt) for more information.
+Visit the [UI Repository](https://github.com/jin42/rpg-schedule-nuxt) for more information.
 
 ## About the bot
 
