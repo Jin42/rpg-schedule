@@ -70,6 +70,7 @@ export interface GuildConfigModel {
   escape?: string;
   gameTemplates?: GameTemplate[];
   publicTimeTable?: boolean;
+  allowLinkedGames?: boolean;
 }
 
 interface GuildConfigDataModel extends GuildConfigModel {
@@ -101,6 +102,7 @@ export class GuildConfig implements GuildConfigDataModel {
   escape?: "!";
   gameTemplates?: GameTemplate[] = [];
   publicTimeTable: boolean = false;
+  allowLinkedGames: boolean = false;
   saveDefaultTemplate = false;
 
   constructor(guildConfig: GuildConfigDataModel = {}) {
@@ -238,6 +240,7 @@ export class GuildConfig implements GuildConfigDataModel {
       escape: this.escape,
       gameTemplates: this.gameTemplates,
       publicTimeTable: this.publicTimeTable,
+      allowLinkedGames: this.allowLinkedGames,
     };
   }
 
