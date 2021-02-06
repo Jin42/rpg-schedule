@@ -74,7 +74,7 @@ export default (options: APIRouteOptions) => {
                   new Date(game.date + " " + game.time + " GMT+" + game.timezone).getTime();
                 const newGame = {
 		  name: game.adventure,
-		  starttime: timezone,
+		  starttime: game.hideDate ? -1 : timezone,
                   maxPlayers: game.players,
 		  players: game.hasOwnProperty("reserved") ? game.reserved.length : 0,
                   runtime: game.duration,
